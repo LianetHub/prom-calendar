@@ -1,0 +1,66 @@
+.icon-menu {
+	flex-shrink: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 0;
+	min-width: rem(42);
+	height: rem(40);
+	z-index: 12;
+	margin-right: auto;
+	background: none;
+	border: 0;
+	@media (min-width: $md5) {
+		align-items: center;
+	}
+	@media (min-width: $md3) {
+		display: none;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			& span {
+				&::before {
+					background: $red;
+				}
+			}
+		}
+	}
+	& span {
+		display: block;
+		padding: rem(2) 0;
+		transition: transform 0.4s ease 0.4s, opacity 0.4s ease 0.4s;
+		will-change: transform;
+		pointer-events: none;
+		&::before {
+			content: "";
+			display: block;
+			height: rem(2);
+			border-radius: rem(2);
+			width: rem(22);
+			background: rgba($color: #212121, $alpha: 0.8);
+			transition: transform 0.3s ease 0s, background-color 0.3s ease 0s;
+			will-change: transform;
+		}
+	}
+	&.active {
+		& span {
+			transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+			&::before {
+				transition: transform 0.45s ease 0.35s, background-color 0.3s ease 0s;
+			}
+			&:first-child {
+				transform: translateY(rem(3));
+				&::before {
+					transform: rotate(-135deg);
+				}
+			}
+			&:last-child {
+				transform: translateY(rem(-3));
+				&::before {
+					transform: rotate(-225deg);
+				}
+			}
+		}
+	}
+}

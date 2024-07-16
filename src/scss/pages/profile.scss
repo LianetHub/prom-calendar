@@ -1,0 +1,103 @@
+.profile {
+	padding: rem(70) 0;
+	// .profile__header
+	&__header {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 15px;
+	}
+	// .profile__title-icon
+	&__title-icon {
+		width: 55px;
+		height: 55px;
+		border-radius: 12px;
+		border: 1px solid #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+	}
+	// .profile__title
+	&__title {
+	}
+	// .profile__title-status
+	&__title-status {
+		margin-left: auto;
+		border-radius: 12px;
+		background: #f5f5f5;
+		padding: em(14.5) em(25);
+		color: rgba($color: #212121, $alpha: 0.8);
+		font-family: $sans;
+		font-weight: 600;
+		font-size: 12px;
+		@media (min-width: $md5) {
+			font-size: 16px;
+		}
+	}
+	// .profile__body
+	&__body {
+		margin: em(32) em(0) em(0) em(0);
+		@media (min-width: $md5) {
+			margin: em(64) em(0) em(0) em(0);
+		}
+	}
+
+	// .profile__caption
+	&__caption {
+		display: flex;
+		justify-content: space-between;
+		font-size: 22px;
+		line-height: 135%;
+		letter-spacing: -0.22px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid rgba($color: #212121, $alpha: 0.3);
+	}
+	// .profile__info
+	&__info {
+		opacity: 0.6;
+	}
+	&__form {
+		display: grid;
+		border-bottom: 1px solid rgba($color: #212121, $alpha: 0.3);
+		& input {
+			text-overflow: ellipsis;
+		}
+		gap: 20px;
+		row-gap: 10px;
+		padding-bottom: 30px;
+		margin: em(21) em(0) em(0) em(0);
+		@media (min-width: $md5) {
+			margin: em(43) em(0) em(0) em(0);
+			padding-bottom: 60px;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 60px;
+			row-gap: 60px;
+		}
+	}
+	// .profile__actions
+	&__actions {
+		margin: em(15) em(0) em(0) em(0);
+		display: flex;
+		justify-content: flex-end;
+		gap: 40px;
+	}
+	// .profile__action
+	&__action {
+		text-decoration: none;
+		transition: color 0.3s ease 0s;
+		color: rgba($color: #212121, $alpha: 0.4);
+		font-family: $sans;
+		font-size: 16px;
+		line-height: 140%;
+		letter-spacing: -0.24px;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $red;
+			}
+		}
+	}
+}

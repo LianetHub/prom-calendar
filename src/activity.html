@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html')
+    <body>
+        <div class="person">
+            <div class="person__container">
+                <h1 class="person__title">Полезные активити</h1>
+                <p class="person__subtitle"> Краткая вводная информация, возможно даже пояснение, что такое активити и почему не на русском языке.</p>
+                <div class="person__body">
+                    <form action="#" class="person__search">
+                        <div class="person__search-field">
+                            <input type="text" name="search" class="input" placeholder="Введите искомое">
+                        </div>
+                        <button type="submit" class="person__search-btn btn btn-blue">Найти</button>
+                    </form>
+                    <ul class="person__activity">
+                        <li class="person__activity-item">
+                            <a href="#picture" data-fancybox class="person__activity-icon">
+                                <img src="@img/activity/01.png" alt="icon">
+                            </a>
+                            <div class="person__activity-body">
+                                <div class="person__activity-name">Программа вводной адаптации</div>
+                                <div class="person__activity-desc">Tincidunt neque lectus diam nunc ut. Sed quis dolor viverra viverra eu at enim. Tellus vitae eleifend egestas lectus suspendisse tincidunt aliquet. Ac id enim interdum faucibus. Duis nulla eget gravida non in tristique ut.</div>
+                            </div>
+                            <a href="" class="person__activity-btn btn btn-primary">установить</a>
+                        </li>
+                        <li class="person__activity-item">
+                            <a href="#picture" data-fancybox class="person__activity-icon">
+                                <img src="@img/activity/02.png" alt="icon">
+                            </a>
+                            <div class="person__activity-body">
+                                <div class="person__activity-name">
+                                    Фото на холсте
+                                </div>
+                                <div class="person__activity-desc">
+                                    Porta ipsum tempor magna et sed nibh nunc. Phasellus convallis sagittis adipiscing morbi facilisis montes. Maecenas morbi suspendisse sed elit vitae. Ridiculus mi tincidunt senectus egestas morbi nulla eget. Cras in venenatis elementum pellentesque sollicitudin.
+                                </div>
+                            </div>
+                            <a href="" class="person__activity-btn btn btn-secondary">удалить</a>
+                        </li>
+                        <li class="person__activity-item">
+                            <a href="#picture" data-fancybox class="person__activity-icon">
+                                <img src="@img/activity/03.png" alt="icon">
+                            </a>
+                            <div class="person__activity-body">
+                                <div class="person__activity-name">Широкоформатная печать</div>
+                                <div class="person__activity-desc">Maecenas morbi suspendisse sed elit vitae. Ridiculus mi tincidunt senectus egestas morbi nulla eget. Cras in venenatis elementum pellentesque sollicitudin.</div>
+                            </div>
+                            <a href="" class="person__activity-btn btn btn-primary">установить</a>
+                        </li>
+                        <li class="person__activity-item">
+                            <a href="#picture" data-fancybox class="person__activity-icon">
+                                <img src="@img/activity/04.png" alt="icon">
+                            </a>
+                            <div class="person__activity-body">
+                                <div class="person__activity-name">Вывески</div>
+                                <div class="person__activity-desc">Ac id enim interdum faucibus. Duis nulla eget gravida non in tristique ut.</div>
+                            </div>
+                            <a href="" class="person__activity-btn btn btn-primary">установить</a>
+                        </li>
+                        <li class="person__activity-item">
+                            <a href="#picture" data-fancybox class="person__activity-icon">
+                                <img src="@img/activity/05.png" alt="icon">
+                            </a>
+                            <div class="person__activity-body">
+                                <div class="person__activity-name">Интересная штука</div>
+                                <div class="person__activity-desc">Ac eget facilisi tempus porttitor congue donec. Id arcu id urna a. Est mauris neque donec ut velit vulputate mauris sed nascetur. Faucibus dolor dictumst ut eget. Ut risus donec at maecenas at viverra cursus eget aliquam. Sed habitant sed magna vulputate rhoncus.</div>
+                            </div>
+                            <a href="" class="person__activity-btn btn btn-primary">установить</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer__container">
+                <a href="" class="footer__logo">
+                    <img src="@img/logo.png" alt="logo">
+                </a>
+                <ul class="footer__menu">
+                    <li><a href="">Заказать интеграцию</a></li>
+                    <li><a href="">Все решения</a></li>
+                    <li><a href="">Поддержка</a></li>
+                </ul>
+                <div class="footer__copy">© 2018-2022 Кухня маркетолога</div>
+            </div>
+        </footer>
+        @@include('html/_modals.html', {})
+        @@include('html/_js.html', {})
+    </body>
+</html>

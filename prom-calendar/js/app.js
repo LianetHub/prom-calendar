@@ -10,71 +10,71 @@ $(function () {
         });
     }
 
-    // let splitGrid = Split(['#split-1', '#split-2'], {
-    //     minSize: 0,
-    //     sizes: [25, 75],
-    //     onDrag: () => {
-    //         $('.gutter').removeClass('gutter-open');
-    //         initalSizes = null;
-    //     }
-    // });
 
-    // let initalSizes;
+    $(document).on('click', function (e) {
 
-    // $(document).on('dblclick', function (e) {
-    //     let $target = $(e.target);
+        let $target = $(e.target);
 
-    //     if ($target.hasClass('gutter')) {
+        if ($target.is('.sidebar__caption-btn')) {
+            $target.addClass('active');
+            $target.next().slideDown()
+        }
 
-    //         $target.toggleClass('gutter-open');
-    //         if ($target.hasClass('gutter-open')) {
-    //             initalSizes = splitGrid.getSizes();
-    //             splitGrid.setSizes([0, 100])
+        if ($target.is('.sidebar__caption-item')) {
+            $('.sidebar__caption-btn').text($target.text()).removeClass('active').next().slideUp()
+        }
 
+        if ($target[0].closest(".sidebar__item-button")) {
+            $target.closest(".sidebar__item-button").next().slideToggle().parent().toggleClass('active');
+        }
 
-    //         } else {
-    //             $('.gutter').removeClass('gutter-open');
-    //             if (initalSizes) {
-    //                 splitGrid.setSizes(initalSizes);
-    //                 initalSizes = null;
-    //             }
-    //         }
-    //     }
-    // });
+    })
 
-    // $(document).on('click', function (e) {
+    let splitGrid = Split(['#split-1', '#split-2'], {
+        minSize: 0,
+        onDrag: () => {
+            $('.gutter').removeClass('gutter-open');
+            $('.prom-calendar').removeClass('full');
+            initalSizes = null;
+        }
+    });
 
-    //     let $target = $(e.target);
+    console.log(splitGrid);
 
-    //     if ($target[0].closest('.panels__menu-btn')) {
-    //         $target.closest('.panels__menu-btn').toggleClass('active').next().slideToggle()
-    //     }
+    let initalSizes;
 
+    $(document).on('dblclick', function (e) {
+        let $target = $(e.target);
 
-    //     if ($target[0].closest('.counter__increment')) {
+        if ($target.hasClass('gutter')) {
 
-    //         let $input = $target.closest('.counter').find('input');
-    //         $input.val(+$input.val() + 1);
-    //     }
-    //     if ($target[0].closest('.counter__decrement')) {
-    //         let $input = $target.closest('.counter').find('input');
-    //         if (+$input.val() > 1) {
-    //             $input.val(+$input.val() - 1);
-    //         }
-    //     }
-    // });
+            $target.toggleClass('gutter-open');
+            $('.prom-calendar').toggleClass('full');
+            if ($target.hasClass('gutter-open')) {
+                initalSizes = splitGrid.getSizes();
+                splitGrid.setSizes([0, 100])
 
 
-    // custom select 
+            } else {
+                $('.gutter').removeClass('gutter-open');
+                $('.prom-calendar').removeClass('full');
+                if (initalSizes) {
+                    splitGrid.setSizes(initalSizes);
+                    initalSizes = null;
+                }
+            }
+        }
+    });
+
+
+
+    // simplebar
 
     document.querySelectorAll('[data-simplebar-block]').forEach(simpleBarBlock => {
 
-        // new SimpleBar(simpleBarBlock, {
-        //     autoHide: false
-        // });
-        console.log(new SimpleBar(simpleBarBlock, {
+        new SimpleBar(simpleBarBlock, {
             autoHide: false
-        }));
+        })
 
     })
 

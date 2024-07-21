@@ -1,1 +1,30 @@
 @import "modules/scrollbar";
+
+.gutter {
+	position: relative;
+	background-color: transparent;
+	transform: translateX(-20px);
+	background-repeat: no-repeat;
+	&.gutter-horizontal {
+		cursor: col-resize;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+			width: rem(14);
+			height: rem(51);
+			border-radius: 0.3125rem;
+			border: 1px solid #d9d9d9;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='19' viewBox='0 0 7 19' fill='none'%3E%3Cpath d='M-4.5897e-07 9.5L6.75 0.406734L6.75 18.5933L-4.5897e-07 9.5Z' fill='%23ABABAB'/%3E%3C/svg%3E");
+			background-position: 0.05rem center;
+			background-size: rem(7) rem(19);
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+		&.gutter-open {
+			transform: rotate(180deg);
+		}
+	}
+}

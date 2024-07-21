@@ -28,7 +28,26 @@ $(function () {
             $target.closest(".sidebar__item-button").next().slideToggle().parent().toggleClass('active');
         }
 
-    })
+        if ($target.is('.prom-calendar__caption')) {
+
+            $('.prom-calendar__menu').not($target.next('.prom-calendar__menu')).slideUp();
+            $target.next('.prom-calendar__menu').slideToggle();
+
+            $('.prom-calendar__caption').not($target).removeClass('active');
+            $target.toggleClass('active');
+        }
+
+    });
+
+    // init accordion
+    if ($('.prom-calendar__caption.active')) {
+        $('.prom-calendar__caption.active').next().slideDown(0)
+    }
+
+
+
+
+    // split grid
 
     let splitGrid = Split(['#split-1', '#split-2'], {
         minSize: 0,
@@ -39,12 +58,14 @@ $(function () {
         }
     });
 
-    console.log(splitGrid);
+
 
     let initalSizes;
 
     $(document).on('dblclick', function (e) {
         let $target = $(e.target);
+
+
 
         if ($target.hasClass('gutter')) {
 

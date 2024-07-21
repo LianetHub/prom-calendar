@@ -10,11 +10,11 @@
                         <div class="prom-calendar__toggler-caption">Масштаб</div>
                         <div class="prom-calendar__toggler-options">
                             <label class="option">
-                                <input type="radio" name="scale" checked value="1" class="option__input hidden" hidden>
+                                <input type="radio" name="scale" value="1" class="option__input hidden" hidden>
                                 <span class="option__btn">Час</span>
                             </label>
                             <label class="option">
-                                <input type="radio" name="scale" value="1/4" class="option__input hidden" hidden>
+                                <input type="radio" name="scale" checked value="1/4" class="option__input hidden" hidden>
                                 <span class="option__btn">15 мин</span>
                             </label>
                         </div>
@@ -439,13 +439,11 @@
                                 <span class="option__btn">17:00 – 19:00</span>
                             </label>
                         </div>
-                        @@include('./html/_calendar.html')
+                        @@include('./html/_calendar-2.html')
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- @@include('html/_modals.html', {}) -->
         @@include('html/_js.html', {})
     </body>
 </html>

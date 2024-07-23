@@ -2,450 +2,129 @@
 <html lang="ru">
     @@include('html/_head.html')
     <body>
-        <div class="prom-calendar">
-            @@include('html/_side.html', {})
-            <div class="prom-calendar__content" id="split-2">
-                <div class="prom-calendar__header" data-simplebar-block>
-                    <div class="prom-calendar__toggler">
-                        <div class="prom-calendar__toggler-caption">Масштаб</div>
-                        <div class="prom-calendar__toggler-options">
-                            <label class="option">
-                                <input type="radio" name="scale" checked value="1" class="option__input hidden" hidden>
-                                <span class="option__btn">Час</span>
-                            </label>
-                            <label class="option">
-                                <input type="radio" name="scale" value="1/4" class="option__input hidden" hidden>
-                                <span class="option__btn">15 мин</span>
-                            </label>
-                        </div>
+        <div class="order-queue">
+            <div class="order-queue__header">
+                <div class="order-queue__header-main">
+                    <a href="" class="order-queue__btn">Очередь заказов</a>
+                    <div class="order-queue__header-item">
+                        <div class="order-queue__caption">Менеджер</div>
+                        <a href="" class="order-queue__action">Катрасов Е. И.</a>
                     </div>
-                    <div class="prom-calendar__days">
-                        <a href="" class="prom-calendar__day active">Час</a>
-                        <a href="" class="prom-calendar__day active">Понедельник</a>
-                        <a href="" class="prom-calendar__day">Вторник</a>
-                        <a href="" class="prom-calendar__day">Среда</a>
-                        <a href="" class="prom-calendar__day">Четверг</a>
-                        <a href="" class="prom-calendar__day">Пятница</a>
-                        <a href="" class="prom-calendar__day">Суббота</a>
-                        <a href="" class="prom-calendar__day">Воскресенье</a>
+                    <div class="order-queue__header-item">
+                        <div class="order-queue__caption">Направление</div>
+                        <a href="" class="order-queue__action">Наружная реклама</a>
+                    </div>
+                    <div class="order-queue__header-item">
+                        <div class="order-queue__caption">Даты</div>
+                        <a href="" class="order-queue__action">20 ноября</a>
+                        <a href="" class="order-queue__action">22 ноября</a>
+                        <div class="order-queue__header-icon">
+                            <img src="@img/icons/calendar.svg" alt="icon">
+                        </div>
                     </div>
                 </div>
-                <div class="prom-calendar__body">
-                    <div class="prom-calendar__main">
-                        <div class="prom-calendar__today">
-                            <div class="prom-calendar__today-time">9:21</div>
-                            <div class="prom-calendar__today-date">6/02/2023 г.</div>
-                        </div>
-                        <div class="prom-calendar__main-body" data-simplebar-block>
-                            <ul class="prom-calendar__list">
-                                <li class="prom-calendar__category">
-                                    <div class="prom-calendar__caption active">Производственный цех</div>
-                                    <div class="prom-calendar__menu">
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Иванов Петр
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Иванов Петр</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Евгенчиков Евгений
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Евгенчиков Евгений</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Снегов Артем
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Снегов Артем</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Путевый Владимир
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Путевый Владимир</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Ковда Сергей
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Ковда Сергей</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Вшивенко Евгений
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Вшивенко Евгений</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Чернышев Виталий
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Чернышев Виталий</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Немиткин Иван
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Немиткин Иван</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Денис Молчанов
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Денис Молчанов</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Поминов Валерий
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Поминов Валерий</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="prom-calendar__category">
-                                    <div class="prom-calendar__caption">Печатный цех</div>
-                                    <div class="prom-calendar__menu">
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Иванов Петр
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Иванов Петр</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Евгенчиков Евгений
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Евгенчиков Евгений</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Снегов Артем
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Снегов Артем</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Путевый Владимир
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Путевый Владимир</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Ковда Сергей
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Ковда Сергей</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Вшивенко Евгений
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Вшивенко Евгений</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Чернышев Виталий
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Чернышев Виталий</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Немиткин Иван
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Немиткин Иван</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Денис Молчанов
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Денис Молчанов</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Поминов Валерий
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Поминов Валерий</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="prom-calendar__category">
-                                    <div class="prom-calendar__caption">Сварочный цех</div>
-                                    <div class="prom-calendar__menu">
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Иванов Петр
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Иванов Петр</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Евгенчиков Евгений
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Евгенчиков Евгений</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Снегов Артем
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Снегов Артем</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Путевый Владимир
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Путевый Владимир</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Ковда Сергей
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Ковда Сергей</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Вшивенко Евгений
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Вшивенко Евгений</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Чернышев Виталий
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Чернышев Виталий</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Немиткин Иван
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Немиткин Иван</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Денис Молчанов
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Денис Молчанов</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                        <a href="" class="prom-calendar__menu-item">
-                                            Поминов Валерий
-                                            <span class="prom-calendar__menu-more">
-                                                <span class="prom-calendar__menu-item-name">Поминов Валерий</span>
-                                                <span class="prom-calendar__menu-item-posistion">
-                                                    монтажник
-                                                </span>
-                                                <span class="prom-calendar__menu-info">
-                                                    Компетенции: <br> монтаж, натяжка, фрезеровка
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="order-queue__day">
+                    <div class="order-queue__day-date">
+                        12 ноября 2023
                     </div>
-                    <div class="prom-calendar__calendar">
-                        <div class="prom-calendar__calendar-filters">
-                            <label class="option">
-                                <input type="radio" name="time" checked value="09-11" class="option__input hidden" hidden>
-                                <span class="option__btn">09:00 – 11:00</span>
-                            </label>
-                            <label class="option">
-                                <input type="radio" name="time" value="11-13" class="option__input hidden" hidden>
-                                <span class="option__btn">11:00 – 13:00</span>
-                            </label>
-                            <label class="option">
-                                <input type="radio" name="time" value="13-15" class="option__input hidden" hidden>
-                                <span class="option__btn">13:00 – 15:00</span>
-                            </label>
-                            <label class="option">
-                                <input type="radio" name="time" value="15-17" class="option__input hidden" hidden>
-                                <span class="option__btn">15:00 – 17:00</span>
-                            </label>
-                            <label class="option">
-                                <input type="radio" name="time" value="17-19" class="option__input hidden" hidden>
-                                <span class="option__btn">17:00 – 19:00</span>
-                            </label>
-                        </div>
-                        @@include('./html/_calendar.html')
-                    </div>
+                    <div class="order-queue__day-time">9:21</div>
+                </div>
+            </div>
+            <div class="order-queue__calendar">
+                <div class="order-queue__calendar-main">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <button class="order-queue__calendar-btn">
+                                        Виды работ
+                                        <span class="order-queue__calendar-btn-icon">
+                                            <img src="@img/icons/down.svg" alt="icon">
+                                        </span>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button class="order-queue__calendar-btn">
+                                        Дата приема
+                                        <span class="order-queue__calendar-btn-icon">
+                                            <img src="@img/icons/down.svg" alt="icon">
+                                        </span>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button class="order-queue__calendar-btn">
+                                        Дата сдачи
+                                        <span class="order-queue__calendar-btn-icon">
+                                            <img src="@img/icons/down.svg" alt="icon">
+                                        </span>
+                                    </button>
+                                </th>
+                                <th>
+                                    <div class="order-queue__calendar-caption">
+                                        Время
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Табличка в профиле</td>
+                                <td>21.10.2023</td>
+                                <td>15.11.2023</td>
+                                <td>26 дн.</td>
+                            </tr>
+                            <tr>
+                                <td>Режимкая вывеска “Магазин”</td>
+                                <td>02.11.2023</td>
+                                <td>08.11.2023</td>
+                                <td>6 дн.</td>
+                            </tr>
+                            <tr>
+                                <td>Название 1</td>
+                                <td>04.11.2023</td>
+                                <td>14.11.2023</td>
+                                <td>10 дн.</td>
+                            </tr>
+                            <tr>
+                                <td>Свеженазначенное задание на производство</td>
+                                <td>14.11.2023</td>
+                                <td>24.11.2023</td>
+                                <td>10 дн.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="order-queue__calendar-body" data-simplebar-block>
+                    @@include('./html/_calendar.html')
+                </div>
+            </div>
+            <div class="order-queue__legend">
+                <div class="order-queue__legend-item">
+                    <div class="order-queue__legend-visual" style="background-color: #fff;"></div>
+                    <div class="order-queue__legend-title">Пусто</div>
+                </div>
+                <div class="order-queue__legend-item">
+                    <div class="order-queue__legend-visual" style="background-color: #EDFFD6;"></div>
+                    <div class="order-queue__legend-title">Назначено</div>
+                </div>
+                <div class="order-queue__legend-item">
+                    <div class="order-queue__legend-visual" style="background-color: #E0F0FF;"></div>
+                    <div class="order-queue__legend-title">В работе</div>
+                </div>
+                <div class="order-queue__legend-item">
+                    <div class="order-queue__legend-visual" style="background-color: #D7F3B3;"></div>
+                    <div class="order-queue__legend-title">Выполнено</div>
+                </div>
+                <div class="order-queue__legend-item">
+                    <div class="order-queue__legend-visual" style="background-color: #FF5C00;"></div>
+                    <div class="order-queue__legend-title">Крайний срок</div>
+                </div>
+                <div class="order-queue__legend-item">
+                    <div class="order-queue__legend-visual" style="background-color: #FFF5F5;"></div>
+                    <div class="order-queue__legend-title">Просрочено</div>
                 </div>
             </div>
         </div>
-
-        <!-- @@include('html/_modals.html', {}) -->
         @@include('html/_js.html', {})
     </body>
 </html>

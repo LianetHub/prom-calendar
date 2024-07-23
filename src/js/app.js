@@ -3,7 +3,15 @@
 $(function () {
 
 
+    $(document).on('click', function (e) {
 
+        let $target = $(e.target);
+
+        if ($target.is('.sidebar__caption-btn')) {
+            $target.addClass('active');
+            $target.next().slideDown()
+        }
+    });
 
     if ($('.order-queue').length > 0) {
 

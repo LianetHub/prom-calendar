@@ -7,9 +7,24 @@ $(function () {
 
         let $target = $(e.target);
 
-        if ($target.is('.sidebar__caption-btn')) {
+        if ($target.is('.order-queue__btn')) {
             $target.addClass('active');
             $target.next().slideDown()
+        }
+
+        if ($target.is('.order-queue__list-item')) {
+            let $wrappper = $target.closest('.order-queue__item');
+            $wrappper.find('.order-queue__btn').text($target.text()).removeClass('active').next().slideUp();
+        }
+
+        if ($target.is('.action-btn')) {
+            $target.addClass('active');
+            $target.next().slideDown()
+        }
+
+        if ($target.is('.order-queue__action-item')) {
+            let $wrappper = $target.closest('.order-queue__action');
+            $wrappper.find('.action-btn').text($target.text()).removeClass('active').next().slideUp();
         }
     });
 

@@ -3,19 +3,6 @@
 $(function () {
 
 
-    // init Fancybox Gallery
-    if (typeof Fancybox !== "undefined" && Fancybox !== null) {
-        Fancybox.bind("[data-fancybox]", {
-            dragToClose: false,
-        });
-    }
-
-
-    $(document).on('click', function (e) {
-
-        let $target = $(e.target);
-
-    });
 
 
     if ($('.order-queue').length > 0) {

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Динамическая таблица с DataTables</title>
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.dataTables.min.css">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/5.0.1/css/fixedColumns.dataTables.min.css">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/2.0.0/css/colReorder.dataTables.min.css">
+
+        <style>
+            /* Дополнительные стили для лучшей демонстрации */
+            body {
+                font-family: sans-serif;
+            }
+
+            .dataTables_wrapper {
+                max-width: 800px;
+                margin: 20px auto;
+            }
+
+            th,
+            td {
+                white-space: nowrap;
+                /* Чтобы столбцы не переносились */
+            }
+
+            /* Добавляем стили для ресайз-ручки */
+            .resize-handle {
+                position: absolute;
+                top: 0;
+                right: -5px;
+                /* Сдвигаем ручку немного за пределы колонки */
+                width: 10px;
+                height: 100%;
+                background: #ccc;
+                cursor: col-resize;
+                /* Меняем курсор на ресайз-курсор */
+                z-index: 10;
+            }
+
+            .resize-handle:hover {
+                background: #999;
+            }
+
+            /* Стили для скрытого состояния */
+            .fixed-columns-hidden .sticky-left-1,
+            .fixed-columns-hidden .sticky-left-2,
+            .fixed-columns-hidden .sticky-left-3 {
+                width: 0 !important;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Динамическая таблица</h1>
+
+        <table id="my-table" class="display nowrap" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Должность</th>
+                    <th>Город</th>
+                    <th>Страна</th>
+                    <th>Зарплата</th>
+                    <th>Возраст</th>
+                    <th>Начало работы</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Тимур</td>
+                    <td>Ахметов</td>
+                    <td>Разработчик</td>
+                    <td>Москва</td>
+                    <td>Россия</td>
+                    <td>$120,000</td>
+                    <td>35</td>
+                    <td>2010/11/25</td>
+                    <td>t.akhmetov@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Анна</td>
+                    <td>Иванова</td>
+                    <td>Менеджер</td>
+                    <td>Санкт-Петербург</td>
+                    <td>Россия</td>
+                    <td>$90,000</td>
+                    <td>28</td>
+                    <td>2015/05/18</td>
+                    <td>a.ivanova@example.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Иван</td>
+                    <td>Сидоров</td>
+                    <td>Дизайнер</td>
+                    <td>Минск</td>
+                    <td>Беларусь</td>
+                    <td>$75,000</td>
+                    <td>32</td>
+                    <td>2018/02/01</td>
+                    <td>i.sidorov@example.com</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Елена</td>
+                    <td>Петрова</td>
+                    <td>Аналитик</td>
+                    <td>Киев</td>
+                    <td>Украина</td>
+                    <td>$85,000</td>
+                    <td>29</td>
+                    <td>2017/08/10</td>
+                    <td>e.petrova@example.com</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Сергей</td>
+                    <td>Смирнов</td>
+                    <td>Тестировщик</td>
+                    <td>Новосибирск</td>
+                    <td>Россия</td>
+                    <td>$60,000</td>
+                    <td>25</td>
+                    <td>2020/03/20</td>
+                    <td>s.smirnov@example.com</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Ольга</td>
+                    <td>Васильева</td>
+                    <td>Программист</td>
+                    <td>Казань</td>
+                    <td>Россия</td>
+                    <td>$110,000</td>
+                    <td>30</td>
+                    <td>2016/09/05</td>
+                    <td>o.vasilyeva@example.com</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Дмитрий</td>
+                    <td>Кузнецов</td>
+                    <td>Администратор</td>
+                    <td>Екатеринбург</td>
+                    <td>Россия</td>
+                    <td>$70,000</td>
+                    <td>40</td>
+                    <td>2012/04/15</td>
+                    <td>d.kuznetsov@example.com</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Мария</td>
+                    <td>Морозова</td>
+                    <td>Менеджер по продажам</td>
+                    <td>Омск</td>
+                    <td>Россия</td>
+                    <td>$95,000</td>
+                    <td>33</td>
+                    <td>2014/10/22</td>
+                    <td>m.morozova@example.com</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Алексей</td>
+                    <td>Соколов</td>
+                    <td>Системный администратор</td>
+                    <td>Волгоград</td>
+                    <td>Россия</td>
+                    <td>$80,000</td>
+                    <td>45</td>
+                    <td>2009/07/01</td>
+                    <td>a.sokolov@example.com</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Наталья</td>
+                    <td>Новикова</td>
+                    <td>Бухгалтер</td>
+                    <td>Челябинск</td>
+                    <td>Россия</td>
+                    <td>$65,000</td>
+                    <td>38</td>
+                    <td>2013/03/03</td>
+                    <td>n.novikova@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/5.0.1/js/dataTables.fixedColumns.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/colreorder/2.0.0/js/dataTables.colReorder.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var table = $('#my-table').DataTable({
+                    // Опции для скролла
+                    scrollY: "300px",
+                    scrollX: true,
+                    scrollCollapse: true,
+                    paging: false, // Отключаем пагинацию, чтобы показать скролл
+
+                    // Фиксированная шапка (FixedHeader)
+                    fixedHeader: true,
+
+                    // Фиксированные столбцы (FixedColumns)
+                    fixedColumns: {
+                        leftColumns: 3 // Фиксируем первые 3 столбца
+                    },
+
+                    // Изменение порядка столбцов (ColReorder)
+                    colReorder: true
+                });
+            });
+            // --- Кастомная логика для ресайз-ручки ---
+            var tableWrapper = $('#my-table_wrapper'); // Контейнер DataTables
+            var resizeHandle = $('<div>').addClass('resize-handle');
+
+            // Добавляем ручку после третьей фиксированной колонки
+            // Важно: DataTables создает дубликат заголовка для fixedHeader, поэтому нужно найти нужный
+            var fixedHeaderTable = $('.DTFC_LeftWrapper .dataTables_scrollHeadInner table');
+            var fixedColumnsHeader = fixedHeaderTable.find('th').eq(2);
+            fixedColumnsHeader.append(resizeHandle.clone());
+
+            var fixedBodyTable = $('.DTFC_LeftWrapper .dataTables_scrollBody table');
+            var fixedColumnsBody = fixedBodyTable.find('td').eq(2);
+            fixedColumnsBody.append(resizeHandle);
+
+            // Логика перетаскивания (Drag and Drop)
+            var isResizing = false;
+            var startX = 0;
+            var startWidth = 0;
+
+            $('.resize-handle').on('mousedown', function (e) {
+                isResizing = true;
+                startX = e.clientX;
+                startWidth = $(this).closest('th, td').width();
+                $(document).on('mousemove', onMouseMove);
+                $(document).on('mouseup', onMouseUp);
+                $('body').css('user-select', 'none'); // Отключаем выделение текста при ресайзе
+            });
+
+            function onMouseMove(e) {
+                if (!isResizing) return;
+                var diff = e.clientX - startX;
+                var newWidth = startWidth + diff;
+
+                // Устанавливаем минимальную ширину, чтобы избежать багов
+                if (newWidth > 50) {
+                    // Обновляем ширину всех трех колонок
+                    var fixedHeaderCells = $('.DTFC_LeftWrapper .dataTables_scrollHeadInner th:lt(3)');
+                    var fixedBodyCells = $('.DTFC_LeftWrapper .dataTables_scrollBody td:lt(3)');
+
+                    fixedHeaderCells.css('width', newWidth + 'px');
+                    fixedBodyCells.css('width', newWidth + 'px');
+
+                    // Синхронизируем DataTables с новыми размерами
+                    table.columns.adjust().draw();
+                }
+            }
+
+            function onMouseUp(e) {
+                isResizing = false;
+                $(document).off('mousemove', onMouseMove);
+                $(document).off('mouseup', onMouseUp);
+                $('body').css('user-select', '');
+            }
+
+            // Логика двойного клика
+            $('.resize-handle').on('dblclick', function () {
+                var tableContainer = $('#my-table_wrapper');
+
+                // Скрываем или показываем колонки
+                if (tableContainer.hasClass('fixed-columns-hidden')) {
+                    // Показываем
+                    $('.DTFC_LeftWrapper').css('width', '300px'); // Устанавливаем ширину по умолчанию
+                    tableContainer.removeClass('fixed-columns-hidden');
+                } else {
+                    // Скрываем
+                    $('.DTFC_LeftWrapper').css('width', '0');
+                    tableContainer.addClass('fixed-columns-hidden');
+                }
+
+                // Перерисовываем таблицу, чтобы она адаптировалась
+                table.columns.adjust().draw();
+            });
+        </script>
+
+    </body>
+</html>
